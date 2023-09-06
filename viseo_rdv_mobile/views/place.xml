@@ -1,0 +1,102 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+
+
+
+<!--<record model="ir.ui.view" id="viseo_rdv_mobile_form">
+      <field name="name">viseo_rdv_mobile.form</field>
+      <field name="model">viseo_rdv_mobile.viseo_rdv_mobile</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="state"/>
+          <field name="note"/>
+          <field name="rdv_date"/>
+        </form>
+      </field>
+    </record>-->
+
+
+
+
+    <record model="ir.ui.view" id="viseo_rdv_mobile_place_viseo">
+      <field name="name">viseo_rdv_mobile_place_tree</field>
+      <field name="model">place_vehicle.place_vehicle</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="at"/>
+          <field name="name"/>
+
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="viseo_rdv_mobile_place_viseo_form">
+      <field name="name">viseo_rdv_mobile_pont_form</field>
+      <field name="model">place_vehicle.place_vehicle</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+          <field name="at"/>
+          <field name="name"/>
+
+        </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+
+
+    <record model="ir.actions.act_window" id="place_vehicle_action_window">
+      <field name="name">Place</field>
+      <field name="res_model">place_vehicle.place_vehicle</field>
+      <field name="view_mode">tree,form</field>
+      <!--<field name="search_rdv_id" ref="viseo_rdv_mobile.viseo_rdv_mobile_gantt"/>-->
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="viseo_rdv_mobile.action_server">
+      <field name="name">viseo_rdv_mobile server</field>
+      <field name="model_id" ref="model_viseo_rdv_mobile_viseo_rdv_mobile"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="viseo_rdv_mobile" id="viseo_rdv_mobile.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="viseo_rdv_mobile.menu_1" parent="viseo_rdv_mobile.menu_root"/>
+    <menuitem name="Menu 2" id="viseo_rdv_mobile.menu_2" parent="viseo_rdv_mobile.menu_root"/>
+-->
+    <!-- actions -->
+
+<!--
+    <menuitem name="List" id="viseo_rdv_mobile.menu_1_list" parent="viseo_rdv_mobile.menu_1"
+              action="viseo_rdv_mobile.action_window"/>
+    <menuitem name="Server to list" id="viseo_rdv_mobile" parent="viseo_rdv_mobile.menu_2"
+              action="viseo_rdv_mobile.action_server"/>
+-->
+
+     <!--<menuitem name="RDV vehicle" id="viseo_rdv_mobile.menu_root" parent="fleet.menu_root"  />-->
+
+<!--    <menuitem name="Place" id="viseo_rdv_mobile_place" parent="viseo_rdv_mobile.viseo_rdv_mobile_menu_root1"-->
+<!--              action="viseo_rdv_mobile.place_vehicle_action_window" sequence="5"/>-->
+    <!--<menuitem name="Rendez-vous" id="viseo_rdv_mobile.menu_1_list" parent="viseo_rdv_mobile.menu_root"
+              action="viseo_rdv_mobile.action_window"/>-->
+
+
+  </data>
+</odoo>

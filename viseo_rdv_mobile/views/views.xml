@@ -1,0 +1,306 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="viseo_rdv_mobile_gantt">
+      <field name="name">viseo_rdv_mobile_gantt</field>
+      <field name="model">viseo_rdv_mobile.viseo_rdv_mobile</field>
+      <field name="arch" type="xml">
+        <gantt date_start="date_start"
+                date_stop="date_stop"
+               color="color"
+                scales="day,week,month,year"
+                default_scale="week"
+                default_group_by="ate"
+                precision="{'day': 'hour:full', 'week': 'day:full', 'month': 'day:full', 'year': 'day:full'}">
+          <field name="ate"/>
+          <!-- <field name="choice" invisible="1"/>
+          <field name="status" invisible="1"/>
+          <field name="user_resp" invisible="1"/>
+          <field name="date_start"/>
+          <field name="date_stop"/>
+          <field name="mecano"/>
+          <field name="pont" attrs="{'invisible':['|',('user_resp','=',False),('choice','=','pl')],'readonly':[('status','=','accepted')]}"/>
+          <field name="place" attrs="{'invisible':['|',('user_resp','=',False),('choice','=','pt')],'readonly':[('status','=','accepted')]}"/> -->
+
+          <!-- <field name="color" invisible="1"/>
+         <templates>
+                    <div t-name="gantt-popover" class="container-fluid">
+                        <div class="row no-gutters">
+                            <div class="col">
+                                <ul class="pl-1 mb-0 list-unstyled">
+                                    <li><strong>Début: </strong> <t t-esc="date_start.format('L LTS')+3"/></li>
+                                    <li><strong>Fin: </strong> <t t-esc="date_stop.format('L LTS')+3"/></li>
+                                    <li><strong>Mecano: </strong> <t t-esc="mecano[1]"/></li>
+                                    <li><strong>Pont: </strong> <t t-esc="pont[1]"/></li>
+                                  <li><strong>Place: </strong> <t t-esc="place[1]"/></li>
+                                </ul>
+
+                            </div>
+                        </div> -->
+                       <!--<div>
+            <h1>Custom Table Example</h1>
+            <t t-call="viseo_rdv_mobile.view_custom_table_rdv"/>
+        </div>-->
+                    <!-- </div>
+
+                </templates> -->
+        </gantt>
+      </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="viseo_rdv_mobile_cohort">
+      <field name="name">viseo_rdv_mobile_cohort</field>
+      <field name="model">viseo_rdv_mobile.viseo_rdv_mobile</field>
+      <field name="arch" type="xml">
+        <cohort string="Rendez-vous véhicule"
+                date_start="date_start"
+                date_stop="date_stop"
+
+              interval="day">
+
+
+          <!--<field name="state"/>
+          <field name="note"/>
+          <field name="rdv_date"/>-->
+        </cohort>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="viseo_rdv_mobile_activity">
+      <field name="name">viseo_rdv_mobile_activity</field>
+      <field name="model">viseo_rdv_mobile.viseo_rdv_mobile</field>
+      <field name="arch" type="xml">
+        <activity string="Rendez-vous véhicule">
+
+
+              <templates>
+                    <div t-name="activity-box">
+                        <div>
+                            <field name="ate" display="full"/>
+                            <field name="place" muted="1" display="full"/>
+                        </div>
+                    </div>
+                </templates>
+
+
+          <!--<field name="state"/>
+          <field name="note"/>
+          <field name="rdv_date"/>-->
+        </activity>
+      </field>
+    </record>
+
+
+
+
+      <record model="ir.ui.view" id="viseo_mobile_rdv_list">
+      <field name="name">viseo_rdv_mobile.list</field>
+      <field name="model">viseo_rdv_mobile.viseo_rdv_mobile</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="staten"/>
+          <field name="note"/>
+          <field name="vehicle_id"/>
+          <field name="date_start"/>
+          <field name="date_stop"/>
+          <field name="status"/>
+<!--          <field name="rdv_date"/>-->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="viseo_mobile_rdv_form">
+      <field name="name">viseo_rdv_mobile_form</field>
+      <field name="model">viseo_rdv_mobile.viseo_rdv_mobile</field>
+      <field name="arch" type="xml">
+        <form>
+           <header>
+                      <button name="ask_rdv_vehicle" string="Demande rdv véhicule" class="oe_highlight"  type="object" attrs="{'invisible':[('status','!=','new')]}"/>
+<!--                    <button name="get_domain_room_for_reservation" string="Demande de réservation salle" class="oe_highlight" type="object"/>-->
+                    <button name="action_validate" string="Autoriser" class="oe_highlight" type="object" attrs="{'invisible':[ ('can_validate','=',False), ('status', '!=', 'draft'),('user_id','!=','responsable_id')]}"/>
+                    <!--<button name="action_refuse" string="Refuser" class="oe_highlight" type="object" attrs="{'invisible':['|', ('can_validate','=',False), ('state', '!=', 'waiting')]}"/>
+                     <button name="action_cancel" string="Annuler" class="oe_highlight" type="object" attrs="{'invisible':['|', ('can_cancel','=',False), ('state', '=', 'cancel')]}"/>-->
+                      <field name="status" widget="statusbar" statusbar_visible="new,draft,accepted,refused,canceled" statusbar_colors="{'KEY_IS_STATE':'VALUE_IS_COLOR'}"/>
+           </header>
+          <sheet>
+
+
+        <group>
+          <field name="user_id" readonly="1"/>
+          
+          <field name="user_resp" invisible="1"/>
+          <field name="responsable_id" widget="many2many_tags"/>
+          <field name="can_validate" invisible="1"/>
+          <field name="nom" invisible="1"/>
+          
+          </group>
+          <group>
+            <field name="ate"/>
+            <field name="choice" widget="radio" attrs="{'invisible':[('user_resp','=',False)],'readonly':[('status','=','accepted')]}"/>
+            <field name="pont"  attrs="{'invisible':['|',('user_resp','=',False),('choice','=','pl')],'readonly':[('status','=','accepted')]}" />
+            <field name="place" attrs="{'invisible':['|',('user_resp','=',False),('choice','=','pt')],'readonly':[('status','=','accepted')]}"/>
+            <field name="mecano" attrs="{'invisible':[ ('user_resp','=',False)],'readonly':[('status','=','accepted')]}"/>
+          </group>
+          <group>
+            <field name="staten" attrs="{'readonly':[('status','!=','new')]}"/>
+            <field name="note"/>
+            <field name="date_rdv" attrs="{'readonly':[('status','!=','new')]}"/>
+            <field name="vehicle_id"/>
+            <field name="date_start" attrs="{'invisible':[('user_resp','=',False)]}"/>
+            <field name="date_stop" attrs="{'invisible':[('user_resp','=',False)]}"/>
+          </group>
+          
+<!--          <field name="rdv_date"/>-->
+        
+          </sheet>
+        </form>
+
+      </field>
+    </record>
+
+<!--<record model="ir.ui.view" id="viseo_rdv_mobile_form">
+      <field name="name">viseo_rdv_mobile.form</field>
+      <field name="model">viseo_rdv_mobile.viseo_rdv_mobile</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="state"/>
+          <field name="note"/>
+          <field name="rdv_date"/>
+        </form>
+      </field>
+    </record>-->
+
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="viseo_rdv_mobile.action_window">
+      <field name="name">RDV Vehicule</field>
+      <field name="res_model">viseo_rdv_mobile.viseo_rdv_mobile</field>
+      <field name="view_mode">gantt,tree,form,cohort,activity</field>
+      <!--<field name="search_rdv_id" ref="viseo_rdv_mobile.viseo_rdv_mobile_gantt"/>-->
+    </record>
+
+    <record model="ir.actions.act_window" id="atelier_vehicle_viseo_action_window">
+      <field name="name">Atelier Vehicule</field>
+      <field name="res_model">viseo_atelier.viseo_atelier</field>
+      <field name="view_mode">tree,form</field>
+      <!--<field name="search_rdv_id" ref="viseo_rdv_mobile.viseo_rdv_mobile_gantt"/>-->
+    </record>
+
+    <record model="ir.actions.act_window" id="type_rdv_vehicle_viseo_action_window">
+      <field name="name">Type de rendez-vous</field>
+      <field name="res_model">type.rdv</field>
+      <field name="view_mode">tree,form</field>
+      <!--<field name="search_rdv_id" ref="viseo_rdv_mobile.viseo_rdv_mobile_gantt"/>-->
+    </record>
+
+    <record model="ir.ui.view" id="viseo_atelier_list_test">
+      <field name="name">Liste type de rendez-vous</field>
+      <field name="model">type.rdv</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+
+
+
+<!--          <field name="rdv_date"/>-->
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="viseo_atelier_list_test">
+      <field name="name">viseo_atelier_list</field>
+      <field name="model">viseo_atelier.viseo_atelier</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+
+          <field name="risponsable_id"/>
+
+<!--          <field name="rdv_date"/>-->
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="viseo_atelier_form_test">
+      <field name="name">viseo_atelier_form</field>
+      <field name="model">viseo_atelier.viseo_atelier</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+          <field name="name"/>
+          <field name="risponsable_id" widget="many2many_tags"/>
+          </group>
+<!--          <field name="rdv_date"/>-->
+        </form>
+      </field>
+    </record>
+
+    <!--<record model="ir.actions.act_window" id="pont_vehicle.action_window">
+      <field name="name">Pont</field>
+      <field name="res_model">pont_vehicle.pont_vehicle</field>
+      <field name="view_mode">tree,form</field>
+      &lt;!&ndash;<field name="search_rdv_id" ref="viseo_rdv_mobile.viseo_rdv_mobile_gantt"/>&ndash;&gt;
+    </record>
+  <record model="ir.actions.act_window" id="viseo_rdv_mobile_place.action_window">
+      <field name="name">Place</field>
+      <field name="res_model">place_vehicle.place_vehicle</field>
+      <field name="view_mode">tree,form</field>
+      &lt;!&ndash;<field name="search_rdv_id" ref="viseo_rdv_mobile.viseo_rdv_mobile_gantt"/>&ndash;&gt;
+    </record>-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="viseo_rdv_mobile.action_server">
+      <field name="name">viseo_rdv_mobile server</field>
+      <field name="model_id" ref="model_viseo_rdv_mobile_viseo_rdv_mobile"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="viseo_rdv_mobile" id="viseo_rdv_mobile.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="viseo_rdv_mobile.menu_1" parent="viseo_rdv_mobile.menu_root"/>
+    <menuitem name="Menu 2" id="viseo_rdv_mobile.menu_2" parent="viseo_rdv_mobile.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="viseo_rdv_mobile.menu_1_list" parent="viseo_rdv_mobile.menu_1"
+              action="viseo_rdv_mobile.action_window"/>
+    <menuitem name="Server to list" id="viseo_rdv_mobile" parent="viseo_rdv_mobile.menu_2"
+              action="viseo_rdv_mobile.action_server"/>
+-->
+
+     <menuitem name="RDV véhicule" id="viseo_rdv_mobile.menu_root" parent="fleet.menu_root"  />
+     <menuitem name="RDV véhicule" id="viseo_rdv_mobile_menu_root1" parent="fleet.fleet_configuration"  sequence="2"/>
+    <menuitem name="Rendez-vous véhicules" id="viseo_rdv_mobile.menu_1_list" parent="viseo_rdv_mobile.menu_root"
+              action="viseo_rdv_mobile.action_window"/>
+
+    <menuitem name="Atelier" id="viseo_atelier_menu_1_list" parent="viseo_rdv_mobile_menu_root1"
+              action="viseo_rdv_mobile.atelier_vehicle_viseo_action_window" sequence="7"/>
+
+<!--    <menuitem name="Type de rendez-vous" id="viseo_type_menu_2_list" parent="viseo_rdv_mobile.menu_root"-->
+<!--              action="viseo_rdv_mobile.type_rdv_vehicle_viseo_action_window" sequence="10"/>-->
+
+
+
+    <!--<menuitem name="Pont" id="viseo_rdv_mobile_pont" parent="viseo_rdv_mobile.menu_root"
+              action="pont_vehicle.action_window"/>
+    <menuitem name="Place" id="viseo_rdv_mobile_place" parent="viseo_rdv_mobile.menu_root"
+              action="viseo_rdv_mobile_place.action_window"/>-->
+  </data>
+</odoo>

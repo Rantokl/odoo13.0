@@ -1,0 +1,44 @@
+<odoo>
+  <data>
+
+
+
+      <record model="ir.actions.act_window" id="atelier_vehicle_viseo.action_window">
+      <field name="name">Atelier Vehicule</field>
+      <field name="res_model">viseo_atelier.viseo_atelier</field>
+      <field name="view_mode">tree,form</field>
+      <!--<field name="search_rdv_id" ref="viseo_rdv_mobile.viseo_rdv_mobile_gantt"/>-->
+    </record>
+
+    <record model="ir.ui.view" id="viseo_atelier_list_test">
+      <field name="name">viseo_atelier_list</field>
+      <field name="model">viseo_atelier.viseo_atelier</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="workshop_id"/>
+          <field name="risponsable_id"/>
+
+<!--          <field name="rdv_date"/>-->
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="viseo_atelier_form_test">
+      <field name="name">viseo_atelier_form</field>
+      <field name="model">viseo_atelier.viseo_atelier</field>
+      <field name="arch" type="xml">
+        <form>
+
+          <field name="workshop_id"/>
+          <field name="risponsable_id"/>
+
+<!--          <field name="rdv_date"/>-->
+        </form>
+      </field>
+    </record>
+
+      <menuitem name="Atelier" id="viseo_atelier.menu_1_list" parent="viseo_rdv_mobile.viseo_rdv_mobile_menu_root1"
+              action="viseo_rdv_mobile.atelier_vehicle_viseo_action_window" sequence="7"/>
+
+
+  </data>
+      </odoo>
