@@ -31,7 +31,7 @@ while True:
 
 # Créez un dictionnaire pour stocker les données précédentes des tables
         anciennes_donnees = {}
-        table_exlure = ['viseo_rdv_mobile_viseo_rdv_mobile','viseoapi_messagetext']
+        table_exlure = ['viseo_rdv_mobile_viseo_rdv_mobile','fleet_claim','viseo_api_devis','viseo_api_chatconversation']
 # Bouclez sur chaque table pour vérifier si elle a changé
         for table in table_exlure:
             table_name = table
