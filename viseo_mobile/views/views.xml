@@ -1,7 +1,7 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<<<<<<< HEAD
+
     <!--<record model="ir.ui.view" id="type_reclamation_list">
       <field name="name">Reclamation list</field>
       <field name="model">fleet.claim.type</field>
@@ -30,7 +30,7 @@
       <field name="res_model">fleet.claim.type</field>
       <field name="view_mode">form</field>
     </record>
-=======
+
 <!--
     <record model="ir.ui.view" id="viseo_mobile.list">
       <field name="name">viseo_mobile list</field>
@@ -53,7 +53,7 @@
       <field name="view_mode">tree,form</field>
     </record>
 -->
->>>>>>> 2db95a1fc73ee212ccd0928209e9f78d20945e25
+
 
     <!-- server action to the one above -->
 <!--
