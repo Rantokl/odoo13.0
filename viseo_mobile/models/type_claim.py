@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from custom_addons.viseo_mobile.models.database import dbconnex
+from . import database
 from odoo import models, fields, api
 import psycopg2
 
@@ -10,7 +10,7 @@ class TypeReclamation(models.Model):
 
     @api.model
     def create(self,vals):
-        curs, connex = dbconnex(self)
+        curs, connex = database.dbconnex(self)
         res = super(TypeReclamation, self).create(vals)
         curs.execute("""INSERT INTO public.viseo_api_typereclamation(
         	id, name)
@@ -23,7 +23,7 @@ class TypeReclamation(models.Model):
 
 
     def write(self,vals):
-        curs, connex = dbconnex(self)
+        curs, connex = database.dbconnex(self)
 
         res = super(TypeReclamation, self).write(vals)
         id = self.id
@@ -38,14 +38,14 @@ class TypeReclamation(models.Model):
         connex.close()
         return res
 
-    def delete(self,vals):
-        res = super(TypeReclamation,self).delete(vals)
+    def unlink(self):
+        res = super(TypeReclamation,self).unlink()
         id = self.id
         print(id)
-        curs, connex = dbconnex(self)
-        curs.execute("""DELETE * FROM public.viseo_api_typereclamation 
+        curs, connex = database.dbconnex(self)
+        curs.execute("""DELETE FROM public.viseo_api_typereclamation 
         WHERE id = %s
-        """, (id))
+        """, (str(id)))
         connex.commit()
         connex.close()
         return res

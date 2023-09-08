@@ -23,7 +23,6 @@
 
     'depends': ['base', 'viseo_parc_auto','viseo_rdv_mobile'],
 
-    'depends': ['base','viseo_parc_auto'],
 
 
     # always loaded

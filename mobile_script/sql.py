@@ -8,7 +8,7 @@ from rpc import mailsend
 from vehicle import vehicle_info
 
 from whats import sendsms
-#from sms import sendsms
+from sms import sms
 from rdv import rdvvehicle
 import random
 
@@ -90,11 +90,11 @@ while True:
                             if message is None:
                                 message = "Bonjour, bienvenue dans l'enceinte Viseo Andraharo."
                                 sendsms(mobile,message)
-                                #sendsms(mobile)
+                                sms(mobile)
                                 mailsend(card,loc, tt, vehicle_id,mdl, plq,email)
                             else:
                                 sendsms(mobile,message)
-                                #sendsms(mobile)
+                                sms(mobile)
                                 mailsend(card,loc, tt, vehicle_id,mdl, plq,email)
                                 time.sleep(2)
                         else :

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from custom_addons.viseo_mobile.models.database import dbconnex
+from . import database
 from odoo import models, fields, api
 import psycopg2
 
@@ -10,7 +10,7 @@ class TypeRdv(models.Model):
 
     @api.model
     def create(self,vals):
-        curs, connex = dbconnex(self)
+        curs, connex = database.dbconnex(self)
         res = super(TypeRdv, self).create(vals)
         curs.execute("""INSERT INTO public.viseo_api_typerendezvous(
         	id, name)
@@ -23,7 +23,7 @@ class TypeRdv(models.Model):
 
 
     def write(self,vals):
-        curs, connex = dbconnex(self)
+        curs, connex = database.dbconnex(self)
 
         res = super(TypeRdv, self).write(vals)
         id = self.id
