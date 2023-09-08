@@ -20,7 +20,11 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
+<<<<<<< HEAD
+    'depends': ['base', 'viseo_parc_auto','viseo_rdv_mobile'],
+=======
     'depends': ['base','viseo_parc_auto'],
+>>>>>>> 2db95a1fc73ee212ccd0928209e9f78d20945e25
 
     # always loaded
     'data': [
