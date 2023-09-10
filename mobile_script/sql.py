@@ -7,7 +7,7 @@ import datetime
 from rpc import mailsend
 from vehicle import vehicle_info
 
-from whats import sendsms
+from whats import sendmes
 from sms import sms
 from rdv import rdvvehicle
 import random
@@ -82,19 +82,15 @@ while True:
                         vehicle_id, mdl, plq,eml, phone = vehicle_info(card)
                         
                         if mdl :
-                #query = "SELECT name FROM fleet_vehicle WHERE tag_rfid = %s",((cc,))
-                    #curs.execute("SELECT name FROM fleet_vehicle WHERE tag_rfid = %s",(cc,))
-                    #vehicle = curs.fetchone()[0]
-                    #print("Vehicle: ", mdl)
                             email, mobile, message = rdvvehicle(vehicle_id)
                             if message is None:
                                 message = "Bonjour, bienvenue dans l'enceinte Viseo Andraharo."
-                                sendsms(mobile,message)
-                                sms(mobile)
+                                sms(mobile[1:])
+                                sendmes(mobile,message)
                                 mailsend(card,loc, tt, vehicle_id,mdl, plq,email)
                             else:
-                                sendsms(mobile,message)
-                                sms(mobile)
+                                sms(mobile[1:])
+                                sendmes(mobile,message)
                                 mailsend(card,loc, tt, vehicle_id,mdl, plq,email)
                                 time.sleep(2)
                         else :
@@ -112,11 +108,12 @@ while True:
                             email, mobile, message = rdvvehicle(vehicle_id)
                             if message is None:
                                 message = "Bonjour, bienvenue dans l'enceinte Viseo Andraharo."
-                                sendsms(mobile,message)
+                                sms(mobile[1:])
+                                sendmes(mobile,message)
                                 #sendsms(mobile)
                             else:
-                                sendsms(mobile,message)
-                                #sendsms(mobile)
+                                sms(mobile[1:])
+                                sendmes(mobile,message)
                                 mailsend(card,loc, tt, vehicle_id,mdl, plq,email)
                                 time.sleep(2)
                             #sendsms(mobile,sms)

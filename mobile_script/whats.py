@@ -4,7 +4,7 @@ import random
 current_time = time.localtime()
 hour = current_time.tm_hour
 minute = current_time.tm_min + 1
-def sendsms(number, sms):
+def sendmes(number, sms):
     send = pywhatkit.sendwhatmsg_instantly(
         number, 
         sms,
