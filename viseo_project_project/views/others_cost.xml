@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="project_cost_form_view" model="ir.ui.view">
+            <field name="name">project.cost.form</field>
+            <field name="model">project.cost</field>
+            <field name="arch" type="xml">
+                <form string="ModelTitle">
+                    <sheet>
+                        <group>
+                            <field name="viseo_project_id" invisible="1"/>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="cost_amount"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="project_cost_tree_view" model="ir.ui.view">
+            <field name="name">project.cost.tree</field>
+            <field name="model">project.cost</field>
+            <field name="arch" type="xml">
+                <tree string="project_cost">
+                    <field name="description"/>
+                    <field name="viseo_project_id"/>
+                    <field name="cost_amount"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="project_cost_act_window" model="ir.actions.act_window">
+            <field name="name">project.cost.action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">project.cost</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+
+<!--        <menuitem name="ModelTitle" id="ModelName_menu" parent="your_root_menu" action="ModelName_act_window"/>-->
+
+    </data>
+</odoo>

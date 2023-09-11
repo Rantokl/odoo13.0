@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_viseo_project_project,viseo.project.project user,model_viseo_project_project,viseo_project_project.group_project_user_viseo,1,0,0,0
+access_viseo_project_project_create,viseo.project.project user_creator,model_viseo_project_project,viseo_project_project.group_create_project_viseo,1,1,1,0
+access_viseo_project_project_manager,viseo.project.project,model_viseo_project_project,viseo_project_project.group_project_manager_viseo,1,1,1,1
+access_viseo_project_task_type_user,viseo.project.task.type.user,model_viseo_project_task_type,viseo_project_project.group_project_user_viseo,1,0,0,0
+access_viseo_project_task_type_project_user,viseo.project.task.type.project.user,model_viseo_project_task_type,viseo_project_project.group_project_user_viseo,1,0,0,0
+access_viseo_project_task_type_manager,viseo.project.task.type manager,model_viseo_project_task_type,viseo_project_project.group_project_manager_viseo,1,1,1,1
+access_viseo_project_task_manager,viseo.project.task manager,model_viseo_project_task,viseo_project_project.group_project_manager_viseo,1,1,1,1
+access_viseo_project_task_user,viseo.project.task user,model_viseo_project_task,viseo_project_project.group_project_user_viseo,1,0,0,0
+access_viseo_project_task_user_create,viseo.project.task user_create,model_viseo_project_task,viseo_project_project.group_create_task_viseo,1,1,1,0
+access_viseo_project_task_user_modif,viseo.project.task user_modif,model_viseo_project_task,viseo_project_project.group_modify_task_viseo,1,1,0,0
+access_viseo_project_task,project.family.group user,model_project_family_group,viseo_project_project.group_project_user_viseo,1,1,1,1
+access_viseo_project_cost,cout de projet,model_project_cost,viseo_project_project.group_create_project_viseo,1,1,1,1
+access_project_budget,Budget de projet,model_project_budget,viseo_project_project.group_create_project_viseo,1,1,1,1
+
+

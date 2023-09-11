@@ -13,7 +13,7 @@ class AllowNoneTransport(xmlrpc.client.Transport):
 
 
 server_url = 'http://localhost:8081'
-db = 'odoo_rfid'
+db = 'analytic_odoo'
 username = 'admin'
 password = 'p@5dM_'
 
@@ -25,8 +25,11 @@ def rdv_vehicle(data):
     
     rdv= {
         'id':data[0][0],
-        'message': data[0][1]
+        'user_id':1,
+        'staten':1,
+        'vehicle_id':9056,
+        'note':'Entretien 2500km',
     }
-    rdv_id = models.execute_kw(db, uid,password, 'mail.mail', 'create', [rdv])
+    rdv_id = models.execute_kw(db, uid,password, 'viseo_rdv_mobile.viseo_rdv_mobile', 'create', [rdv])
     if rdv_id:
         print("RDV created...")

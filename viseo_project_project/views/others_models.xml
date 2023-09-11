@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>     
+    <record id="inherit_viseo_view_purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.form.viseo</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_ref']" position="after">
+                <field name="viseo_project_id" options="{'no_create': True, 'no_create_edit':True}" invisible="1"/>
+                <field name="family_group" options="{'no_create': True, 'no_create_edit':True}"/>
+            </xpath>
+        </field>
+    </record>
+
+        <record id="inherit_viseo_view_sale_order_form_project" model="ir.ui.view">
+        <field name="name">sale.order.form.viseo</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="viseo_project_id" options="{'no_create': True, 'no_create_edit':True}" invisible="1"/>
+                <field name="family_group" options="{'no_create': True, 'no_create_edit':True}"/>
+            </xpath>
+        </field>
+    </record>
+
+        <record id="inherit_internal_request_view_model_form_project" model="ir.ui.view">
+        <field name="name">internal.request.form.viseo</field>
+        <field name="model">internal.request</field>
+        <field name="inherit_id" ref="viseo_internal_request.internal_request_view_model_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='adress_destination']" position="after">
+                <field name="viseo_project_id" options="{'no_create': True, 'no_create_edit':True}" invisible="1"/>
+                <field name="family_group" options="{'no_create': True, 'no_create_edit':True}"/>
+            </xpath>
+        </field>
+    </record>
+
+        <record id="inherit_viseo_hr_expense_view_form_project" model="ir.ui.view">
+        <field name="name">hr.expense.form.viseo</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="viseo_project_id" options="{'no_create': True, 'no_create_edit':True}" invisible="1"/>
+                <field name="family_group" options="{'no_create': True, 'no_create_edit':True}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
