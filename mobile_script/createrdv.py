@@ -32,7 +32,7 @@ models = xmlrpc.client.ServerProxy(server_url + '/xmlrpc/2/object', transport=Al
 
     
 imran = {
-    'user_id':1,
+    'user_id':2,
     'ate':1,
     'choice':'pl',
     'state':'entretient',
@@ -43,7 +43,7 @@ imran = {
     'note':'Entretien 2500km',
 }
 zoheir = {
-    'user_id':1,
+    'user_id':2,
     'ate':1,
     'choice':'pl',
     'state':'entretient',
@@ -54,7 +54,7 @@ zoheir = {
     'note':'Entretien 5000km',
 }
 zara = {
-    'user_id':1,
+    'user_id':2,
     'ate':1,
     'choice':'pl',
     'state':'entretient',
@@ -65,7 +65,7 @@ zara = {
     'note':'Entretien 5000km',
 }
 latifa = {
-    'user_id':1,
+    'user_id':2,
     'ate':1,
     'choice':'pl',
     'state':'entretient',
@@ -76,7 +76,7 @@ latifa = {
     'note':'Entretien 5000km',
 }
 jisca = {
-    'user_id':1,
+    'user_id':2,
     'ate':1,
     'choice':'pl',
     'state':'entretient',
@@ -87,7 +87,7 @@ jisca = {
     'note':'Entretien 5000km',
 }
 tovo = {
-    'user_id':1,
+    'user_id':2,
     'ate':1,
     'choice':'pl',
     'state':'entretient',
@@ -98,7 +98,7 @@ tovo = {
     'note':'Entretien 5000km',
 }
 roumana = {
-    'user_id':1,
+    'user_id':2,
     'ate':1,
     'choice':'pl',
     'state':'entretient',
@@ -110,7 +110,7 @@ roumana = {
 }
 
 andry = {
-    'user_id':1,
+    'user_id':2,
     'ate':1,
     'choice':'pl',
     'state':'entretient',
@@ -121,7 +121,7 @@ andry = {
     'note':'Entretien 5000km',
 }
 mourtaza = {
-    'user_id':1,
+    'user_id':2,
     'ate':1,
     'choice':'pl',
     'state':'entretient',

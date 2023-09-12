@@ -4,7 +4,7 @@ def sms(phone):
     SENDER_NAME = 'OceanTrade' 
     AUTH_TOKEN = 'Basic cGxST2tGUjdoQXEwZkRwVDdqb0FhekRHMU54ZEtOenE6c2luUnVOSjBOek54TjNVYQ==' 
 
-    message = "Bonjour, bienvenue à Gallaxy Village, merci de voir KFP" 
+    message = "Bonjour, bienvenue à Gallaxy Village, KFP vous attends à 8h30" 
     recipient_phone_number=phone
     dev_phone_number='261326043944' 
 
