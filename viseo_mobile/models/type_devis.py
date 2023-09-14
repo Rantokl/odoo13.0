@@ -5,7 +5,7 @@ import psycopg2
 
 class Typedevis(models.Model):
 
-    _inherit = 'fleet.claim.type'
+    _inherit = 'type.devis.sav'
 
 
     @api.model

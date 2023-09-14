@@ -2,6 +2,7 @@
 
 
 from . import type_claim
+from . import type_devis
 from . import type_rdv
 
 #from . import models

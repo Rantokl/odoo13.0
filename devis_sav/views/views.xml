@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="devis_sav_list">
+      <field name="name">Liste des types de devis SAV</field>
+      <field name="model">type.devis.sav</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on mode -->
+    <record model="ir.actions.act_window" id="devis_sav.action_window">
+      <field name="name">Type de devis</field>
+      <field name="res_model">type.devis.sav</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="devis_sav.action_server">
+      <field name="name">devis_sav server</field>
+      <field name="model_id" ref="model_devis_sav_devis_sav"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="devis_sav" id="devis_sav.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="devis_sav.menu_1" parent="devis_sav.menu_root"/>
+    	-->
+    <menuitem name="Menu 2" id="devis_sav.menu" parent="fleet.fleet_configuration"/>
+
+
+    <!-- actions -->
+
+    <menuitem name="Tyde de devis" id="devis_sav_menu_1_list" parent="fleet.fleet_configuration"
+              action="devis_sav.action_window" sequence="5"/>
+
+<!--    <menuitem name="Server to list" id="devis_sav" parent="devis_sav.menu_2"-->
+<!--              action="devis_sav.action_server"/>-->
+
+  </data>
+</odoo>
