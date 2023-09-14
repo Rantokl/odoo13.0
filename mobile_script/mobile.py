@@ -34,8 +34,8 @@ try:
 except Exception as e:
     print(e)
 curs = connex.cursor()
-query = """SELECT fv.id, fv.driver_id, vtr.name ,fv.license_plate
-    FROM fleet_vehicle fv INNER JOIN fleet_vehicle_model vtr on vtr.id = fv.model_id 
+query = """SELECT DISTINCT rp.id, rp.name, rp.email ,rp.mobile
+    FROM fleet_vehicle fv INNER JOIN res_partner rp on fv.driver_id = rp.id 
     WHERE fv.tag_ids = '11';
     """
 curs.execute(query)
@@ -49,10 +49,10 @@ for row in rows:
     #print(row[0], model, plaque)
    
         
-    curs1.execute("""INSERT INTO public."viseo_api_vehicle"(
-	id,number,model,owner_id)
+    curs1.execute("""INSERT INTO public."viseo_account_user"(
+	id,name,email,mobile)
 	VALUES (%s,%s,%s,%s)
- """,(row[0],row[3],row[2],row[1]))
+ """,(row[0],row[1],row[2],row[3]))
         
     connex.commit()
     connex1.commit()

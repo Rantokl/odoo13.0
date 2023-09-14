@@ -85,11 +85,11 @@ while True:
                             email, mobile, message = rdvvehicle(vehicle_id)
                             if message is None:
                                 message = "Bonjour, bienvenue dans l'enceinte Viseo Andraharo."
-                                sms(mobile[1:])
+                                #sms(mobile[1:])
                                 sendmes(mobile,message)
                                 mailsend(card,loc, tt, vehicle_id,mdl, plq,email)
                             else:
-                                sms(mobile[1:])
+                                #sms(mobile[1:])
                                 sendmes(mobile,message)
                                 mailsend(card,loc, tt, vehicle_id,mdl, plq,email)
                                 time.sleep(2)
@@ -108,11 +108,11 @@ while True:
                             email, mobile, message = rdvvehicle(vehicle_id)
                             if message is None:
                                 message = "Bonjour, bienvenue dans l'enceinte Viseo Andraharo."
-                                sms(mobile[1:])
+                                #sms(mobile[1:])
                                 sendmes(mobile,message)
                                 #sendsms(mobile)
                             else:
-                                sms(mobile[1:])
+                                #sms(mobile[1:])
                                 sendmes(mobile,message)
                                 mailsend(card,loc, tt, vehicle_id,mdl, plq,email)
                                 time.sleep(2)
