@@ -12,10 +12,10 @@ class AllowNoneTransport(xmlrpc.client.Transport):
 
 
 
-server_url = 'http://localhost:8081'
-db = 'analytic_odoo'
+server_url = 'http://formation.viseo.erp'
+db = 'viseo13_20230705_0830'
 username = 'admin'
-password = 'p@5dM_'
+password = '@dm1n123!'
 
 common = xmlrpc.client.ServerProxy(server_url+'/xmlrpc/2/common')
 uid = common.authenticate(db, username, password, {})
@@ -27,6 +27,6 @@ def log_user(data,passwd):
         'passwd':passwd,
         'login':data
     }
-    rdv_id = models.execute_kw(db, uid,password, 'res.partner', 'write', [['id','=',data],[rdv]])
+    rdv_id = models.execute_kw(db, uid,password, 'res.partner', 'write', [[data],rdv])
     if rdv_id:
-        print("RDV created...")
+        print("Login created...")

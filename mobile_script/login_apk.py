@@ -27,3 +27,5 @@ if rows:
         curs.execute(query,(password,row[0],row[0]))
         log_user(row[0],password)
         print(row[0], password, "Created success")
+        
+        conn.commit()

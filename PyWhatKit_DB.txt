@@ -143,3 +143,118 @@ Time: 9:14
 Phone Number: +261340300060
 Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
 --------------------
+Date: 18/9/2023
+Time: 7:25
+Phone Number: +261384900551
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 18/9/2023
+Time: 7:57
+Phone Number: +261340300068
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 18/9/2023
+Time: 8:3
+Phone Number: +261344900642
+Message: Bonjour, nous vous remercions pour votre fidélité, une excellente journée à vous
+--------------------
+Date: 18/9/2023
+Time: 8:29
+Phone Number: +261344903145
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 18/9/2023
+Time: 8:42
+Phone Number: +261344901773
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 19/9/2023
+Time: 7:18
+Phone Number: +261384900551
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 19/9/2023
+Time: 7:45
+Phone Number: +261344900642
+Message: Bonjour, nous vous remercions pour votre fidélité, une excellente journée à vous
+--------------------
+Date: 19/9/2023
+Time: 7:50
+Phone Number: +261340300068
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 19/9/2023
+Time: 8:8
+Phone Number: +261340300063
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 19/9/2023
+Time: 9:1
+Phone Number: +261340300060
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 19/9/2023
+Time: 9:20
+Phone Number: +261344901773
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 19/9/2023
+Time: 10:23
+Phone Number: +261344900642
+Message: Bonjour, nous vous remercions pour votre fidélité, une excellente journée à vous
+--------------------
+Date: 21/9/2023
+Time: 7:38
+Phone Number: +261340300063
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 21/9/2023
+Time: 7:51
+Phone Number: +261340300068
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 21/9/2023
+Time: 7:52
+Phone Number: +261344900642
+Message: Bonjour, nous vous remercions pour votre fidélité, une excellente journée à vous
+--------------------
+Date: 21/9/2023
+Time: 8:32
+Phone Number: +261344901773
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 21/9/2023
+Time: 8:59
+Phone Number: +261340300060
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 21/9/2023
+Time: 11:53
+Phone Number: +261344901849
+Message: Bonjour, bienvenue à Ocean Trade, nous vous souhaitons une excellente journée
+--------------------
+Date: 26/9/2023
+Time: 8:36
+Phone Number: +261340300063
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 26/9/2023
+Time: 8:38
+Phone Number: +261344901773
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 26/9/2023
+Time: 9:2
+Phone Number: +261340300060
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 26/9/2023
+Time: 9:26
+Phone Number: +261340300080
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
+Date: 26/9/2023
+Time: 12:13
+Phone Number: +261340300063
+Message: Bonjour, bienvenue à Ocean Trade, bonne journée à vous.
+--------------------
