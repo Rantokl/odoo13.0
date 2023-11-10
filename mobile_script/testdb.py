@@ -14,7 +14,7 @@ conn_params = {
 # Établissez une connexion à la base de données
 database = 'odoo_mobile'
 countb =0
-conn = psycopg2.connect(database='mobile_test',
+conn = psycopg2.connect(database='mobile_sav',
                           user = 'postgres',
                           password='1234',
                           host='10.68.132.2',
@@ -55,21 +55,26 @@ while True:
         
         # Comparez chaque ligne avec les données précédentes
                     for i in range(len(nouvelles_lignes)):
-                        if nouvelles_lignes[i] != anciennes_rows[i]:
+                        if nouvelles_lignes[i] == anciennes_rows[i]:
+                        
+                            time.sleep(2)
+                        else:
+                            
                         
                             print(f"Modification détectée dans la table {table_name}, ligne {i}.")
                         
         # Mettez à jour les données précédentes avec les données actuelles
                             anciennes_donnees[table] = nouvelles_lignes
                             print(nouvelles_lignes[i])
+                            
             else:
                     countb= count
                     query = "SELECT * FROM {table_name}ORDER BY id DESC LIMIT 1 ;"
                     cur.execute(f"SELECT * FROM {table_name} ORDER BY id DESC LIMIT 1 ;")
                     
                     data = cur.fetchall()
-                    for dt in data:
-                        print(dt)
+                    # for dt in data:
+                    #     print(dt)
                     #if table_name == "viseo_api_rendezvous":    
                         #print("RDV", countb)
                     
@@ -79,7 +84,7 @@ while True:
                         #print("Devis",countb)
                     #else:
                         #print("Devis",countb)
-                        time.sleep(2)
+                    time.sleep(2)
             
 
         

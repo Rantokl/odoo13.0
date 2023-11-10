@@ -23,7 +23,7 @@ connex = psycopg2.connect(database='viseo13_20230705_0830',
                           port='5432')
 
 
-connex1 = psycopg2.connect(database='mobile_sav',
+connex1 = psycopg2.connect(database='mobile_101023',
                           user = 'etech',
                           password='3Nyy22Bv',
                           host='10.68.132.2',
@@ -49,7 +49,7 @@ for row in rows:
     #print(row[0], model, plaque)
    
         
-    curs1.execute("""INSERT INTO public."viseo_api_vehicle"(
+    curs1.execute("""INSERT INTO public."viseoApi_vehicle"(
 	id,number,model,owner_id)
 	VALUES (%s,%s,%s,%s)
  """,(row[0],row[3],row[2],row[1]))

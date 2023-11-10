@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "devis_sav",
+    'name': "viseo_caution_bank",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -20,15 +20,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','viseo_parc_auto','sale','viseo_hide_cost','sale_stock','sale_management','sale_crm','sale_margin'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
+        # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/test.xml',
         'views/templates.xml',
-        'wizard/sale/sale_pdf.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

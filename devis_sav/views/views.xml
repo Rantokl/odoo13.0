@@ -12,12 +12,18 @@
       </field>
     </record>
 
+    
+
     <!-- actions opening views on mode -->
     <record model="ir.actions.act_window" id="devis_sav.action_window">
       <field name="name">Type de devis</field>
       <field name="res_model">type.devis.sav</field>
       <field name="view_mode">tree,form</field>
     </record>
+
+    
+
+   
 
 
     <!-- server action to the one above -->
