@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template >
+<t t-name="custom_html_template">
+    <div class="pivot_table">
+        <h2>Tableau analytique</h2>
+        <!--<table border="1">
+
+            <tr>
+                <th>Head</th>
+                <th>Head</th>
+            </tr>
+            <tr>
+                <td>Row 1, Cell 1</td>
+                <td>Row 1, Cell 2</td>
+            </tr>
+            <tr>
+                <td>Row 2, Cell 1</td>
+                <td>Row 2, Cell 2</td>
+            </tr>
+        </table>-->
+         <div class="container mt-5">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th onclick="showModal('Header 1')">Header 1</th>
+                <th onclick="showModal('Header 2')">Header 2</th>
+                <th onclick="showModal('Header 3')">Header 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td onclick="showModal('Row 1, Col 1')">Data 1</td>
+                <td onclick="showModal('Row 1, Col 2')">Data 2</td>
+                <td onclick="showModal('Row 1, Col 3')">Data 3</td>
+            </tr>
+            <tr>
+                <td onclick="showModal('Row 2, Col 1')">Data 4</td>
+                <td onclick="showModal('Row 2, Col 2')">Data 5</td>
+                <td onclick="showModal('Row 2, Col 3')">Data 6</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    </div>
+
+    <div class="modal" id="dataModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dataModalLabel">Contenu</h5>
+<!--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+            </div>
+            <div class="modal-body">
+                <p id="modalContent"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</t>
+
+</template>

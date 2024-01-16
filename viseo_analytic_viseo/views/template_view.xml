@@ -1,0 +1,55 @@
+<odoo>
+    <record id="view_my_template" model="ir.ui.view">
+        <field name="name">mon.modele.template</field>
+        <field name="model">viseo_analytic.viseo_analytic</field>
+        <field name="arch" type="xml">
+            <form>
+                <div class="container mt-5">
+    <table class="table table-bordered">
+        <t t-call="web.html_container">
+        <thead>
+            <tr>
+<!--                <t t-foreach="departements" t-as="departement_id">-->
+                <th t-foreach="o.departements" t-as="departement_id" onclick="showModal('Header 1')"><t t-esc="departement_id.name"/></th>
+
+<!--                    </t>-->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td onclick="showModal('Row 1, Col 1')">Data 1</td>
+                <td onclick="showModal('Row 1, Col 2')">Data 2</td>
+                <td onclick="showModal('Row 1, Col 3')">Data 3</td>
+            </tr>
+            <tr>
+                <td onclick="showModal('Row 2, Col 1')">Data 4</td>
+                <td onclick="showModal('Row 2, Col 2')">Data 5</td>
+                <td onclick="showModal('Row 2, Col 3')">Data 6</td>
+            </tr>
+        </tbody>
+        </t>
+    </table>
+</div>
+
+                <!--<div class="modal" id="dataModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dataModalLabel">Contenu</h5>
+&lt;!&ndash;                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>&ndash;&gt;
+            </div>
+            <div class="modal-body">
+                <p id="modalContent"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+
+            </form>
+        </field>
+    </record>
+</odoo>
